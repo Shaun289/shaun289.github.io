@@ -1,5 +1,5 @@
 ---
 layout: page
-title: 'Git'
+title: 'Python'
 ---
 

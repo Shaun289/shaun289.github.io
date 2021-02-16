@@ -1,6 +1,5 @@
 ---
 layout: page
-title: 'Linux'
+title: 'Rust'
 ---
 
-- 이렇게 하는게 맞나?

@@ -1,6 +1,5 @@
 ---
 layout: page
-title: 'Linux'
+title: 'Shell'
 ---
 
-- 이렇게 하는게 맞나?
