@@ -47,7 +47,7 @@ navbar-links:
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "loblue@gmail.com"
+  #email: "loblue@gmail.com"
   #facebook: loblue
   github: Shaun289
   #twitter: daattali
