@@ -20,9 +20,10 @@ navbar-links:
     - Python: "python"
     - Rust: "rust"
     - Shell: "shell"
-  O/S:
+  O/S & Cloud  :
     - Linux: "linux"
     - WSL: "wsl"
+    - Oracle Cloud: "oraclecloud"
   Tools:
     - Vim: "vim"
     - Git: "git"
