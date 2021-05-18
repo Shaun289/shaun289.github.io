@@ -9,3 +9,4 @@ cover-img: /assets/img/shell/bash-148836_640.png
 
 # TroubleShooting
 - [Makefile 기본 shell 설정 에러](/2021-02-19-Makefile_echo)
+- [우분투 기본 쉘을 dash에서 bash로 변경](/2021-05-18-default_shell)
