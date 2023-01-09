@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://shaun289.github.io/2023/01/09/Snake-Game-wriiten-in-Rust/</loc>
+        <lastmod>2023-01-09T11:19:28.406Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://shaun289.github.io/2023/01/09/%EC%A3%BC%EA%B0%84-%EC%9E%AC%ED%85%8C%ED%81%AC-%EC%9D%BC%EC%A7%80-%EC%8B%9C%EC%9E%91/</loc>
         <lastmod>2023-01-09T11:01:01.725Z</lastmod>
         <changefreq>weekly</changefreq>
