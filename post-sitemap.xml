@@ -9,8 +9,16 @@
 
 
     <url>
-        <loc>http://shaun289.github.io/2023/01/09/Snake-Game-wriiten-in-Rust/</loc>
-        <lastmod>2023-01-12T10:50:46.028Z</lastmod>
+        <loc>http://shaun289.github.io/2023/01/12/Hexo-%EC%84%A4%EC%B9%98-%EB%B0%8F-%ED%8C%81%EB%AA%A8%EC%9D%8C/</loc>
+        <lastmod>2023-01-12T11:31:20.149Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://shaun289.github.io/2023/01/12/React-Native-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</loc>
+        <lastmod>2023-01-12T11:19:57.847Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,7 +26,15 @@
 
     <url>
         <loc>http://shaun289.github.io/2023/01/09/%EC%A3%BC%EA%B0%84-%EC%9E%AC%ED%85%8C%ED%81%AC-%EC%9D%BC%EC%A7%80-%EC%8B%9C%EC%9E%91/</loc>
-        <lastmod>2023-01-09T11:01:01.725Z</lastmod>
+        <lastmod>2023-01-12T10:59:48.319Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://shaun289.github.io/2023/01/09/Snake-Game-wriiten-in-Rust/</loc>
+        <lastmod>2023-01-12T10:50:46.028Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
