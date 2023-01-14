@@ -12,18 +12,20 @@
     
     <meta name="keywords" content="ReactNative, RN, Programming" />
     
-    <meta name="description" content="ReactNative를 맥북m1에 설치하며 거칠게 남기는 로그입니다.계속 업데이트하며 다듬도록 하겠습니다. 참고 링크 [React-Native] 1. M1 Mac에서 React-Native 환경 구축  설치 Homebrew와 node 는 이미 설치 Watchman 설치">
+    <meta name="description" content="ReactNative를 맥북m1에 설치하며 거칠게 남기는 로그입니다.계속 업데이트하며 다듬도록 하겠습니다. 참고 링크 [React-Native] 1. M1 Mac에서 React-Native 환경 구축 맥에서 Brew로 자바 설치하기 M1 맥 개발환경 설정 - (4) 안드로이드 스튜디오 설치  설치 Homebrew와 node 는 이미 설치 Watchman 설">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Native 시작하기">
 <meta property="og:url" content="http://shaun289.github.io/2023/01/12/React-Native-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/index.html">
 <meta property="og:site_name" content="Programming &amp; games">
-<meta property="og:description" content="ReactNative를 맥북m1에 설치하며 거칠게 남기는 로그입니다.계속 업데이트하며 다듬도록 하겠습니다. 참고 링크 [React-Native] 1. M1 Mac에서 React-Native 환경 구축  설치 Homebrew와 node 는 이미 설치 Watchman 설치">
+<meta property="og:description" content="ReactNative를 맥북m1에 설치하며 거칠게 남기는 로그입니다.계속 업데이트하며 다듬도록 하겠습니다. 참고 링크 [React-Native] 1. M1 Mac에서 React-Native 환경 구축 맥에서 Brew로 자바 설치하기 M1 맥 개발환경 설정 - (4) 안드로이드 스튜디오 설치  설치 Homebrew와 node 는 이미 설치 Watchman 설">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://shaun289.github.io/images/xcode_install.png">
 <meta property="article:published_time" content="2023-01-12T11:05:12.000Z">
-<meta property="article:modified_time" content="2023-01-12T11:19:57.847Z">
+<meta property="article:modified_time" content="2023-01-13T22:49:50.629Z">
 <meta property="article:author" content="Shaun289">
 <meta property="article:tag" content="ReactNative, RN, Programming">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://shaun289.github.io/images/xcode_install.png">
     
 
     
@@ -188,7 +190,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2023/01/12/React-Native-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" class="article-date">
-     <time datetime="2023-01-12T11:19:57.847Z" itemprop="dateModified">2023-01-12</time>
+     <time datetime="2023-01-13T22:49:50.629Z" itemprop="dateModified">2023-01-14</time>
   </a>
 </div>
 
@@ -218,10 +220,40 @@
             <p>ReactNative를 맥북m1에 설치하며 거칠게 남기는 로그입니다.<br>계속 업데이트하며 다듬도록 하겠습니다.</p>
 <h1 id="참고-링크"><a href="#참고-링크" class="headerlink" title="참고 링크"></a>참고 링크</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://choboit.tistory.com/83">[React-Native] 1. M1 Mac에서 React-Native 환경 구축</a></li>
+<li><a target="_blank" rel="noopener" href="https://llighter.github.io/install-java-on-mac/">맥에서 Brew로 자바 설치하기</a></li>
+<li><a target="_blank" rel="noopener" href="https://danu.dev/macos/Mac-OS-settings-4/">M1 맥 개발환경 설정 - (4) 안드로이드 스튜디오 설치</a></li>
 </ul>
 <h1 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h1><ul>
 <li>Homebrew와 node 는 이미 설치</li>
 <li>Watchman 설치</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% brew install watchman</span><br><span class="line">% watchman -v</span><br><span class="line">2023.01.09.00</span><br></pre></td></tr></table></figure>
+
+<h2 id="react-natice-cli-설치"><a href="#react-natice-cli-설치" class="headerlink" title="react-natice-cli 설치"></a>react-natice-cli 설치</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">% npm install -g react-native-cli</span><br><span class="line">added 82 packages in 5s</span><br><span class="line"></span><br><span class="line">38 packages are looking for funding</span><br><span class="line">  run `npm fund` for details</span><br><span class="line">% npx react-native --version</span><br><span class="line">react-native-cli: 2.0.1</span><br><span class="line">react-native: n/a - not inside a React Native project directory</span><br><span class="line">% react-native --version</span><br><span class="line">react-native-cli: 2.0.1</span><br><span class="line">react-native: n/a - not inside a React Native project directory</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>npx 쓰는것과 아닌것의 차이가 global 설치냐 아니냐 차이인것 같은데 일단 넘어감</li>
+</ul>
+<h2 id="xcode-설치"><a href="#xcode-설치" class="headerlink" title="xcode 설치"></a>xcode 설치</h2><ul>
+<li>app store에서 설치</li>
+</ul>
+<p><img src="/images/xcode_install.png"></p>
+<h3 id="cocoapods-설치"><a href="#cocoapods-설치" class="headerlink" title="cocoapods 설치"></a>cocoapods 설치</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% sudo gem install cocoapods</span><br><span class="line">% pod --version</span><br><span class="line">1.11.3</span><br></pre></td></tr></table></figure>
+
+<h3 id="Rosetta-설정"><a href="#Rosetta-설정" class="headerlink" title="Rosetta 설정"></a>Rosetta 설정</h3><ul>
+<li>m1 에서 로제타의 성능과 배터리 사용량이 좋지 않은걸로 아는데<br>React Native 에서 m1으로 컴파일되지 않은 라이브러리가 있었나보다.<br>일단 설치 안하고 진행하다 문제 생기면 되돌아오자</li>
+</ul>
+<h2 id="Android-개발환경-설치"><a href="#Android-개발환경-설치" class="headerlink" title="Android 개발환경 설치"></a>Android 개발환경 설치</h2><h3 id="JDK-설치"><a href="#JDK-설치" class="headerlink" title="JDK 설치"></a>JDK 설치</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Rosetta 2 설치</span><br><span class="line">% sudo softwareupdate --install-rosetta</span><br><span class="line"># adoptopenjdk/openjdk 추가하기</span><br><span class="line">% brew tap adoptopenjdk/openjdk</span><br><span class="line"># jdk 14 설치</span><br><span class="line">% brew install --cask adoptopenjdk14</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>중간에 문제 생겨서 멈추고 다시 설치함</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">% brew reinstall --cask adoptopenjdk14</span><br><span class="line">% /usr/libexec/java_home -V</span><br><span class="line">Matching Java Virtual Machines (1):</span><br><span class="line">    14.0.2 (x86_64) &quot;AdoptOpenJDK&quot; - &quot;AdoptOpenJDK 14&quot; /Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home</span><br><span class="line">/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home</span><br><span class="line">% java --version</span><br><span class="line">openjdk 14.0.2 2020-07-14</span><br><span class="line">OpenJDK Runtime Environment AdoptOpenJDK (build 14.0.2+12)</span><br><span class="line">OpenJDK 64-Bit Server VM AdoptOpenJDK (build 14.0.2+12, mixed mode, sharing)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Andriod-Studio"><a href="#Andriod-Studio" class="headerlink" title="Andriod Studio"></a>Andriod Studio</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://developer.android.com/studio">Android Studio</a> 홈페이지에서 Mac with Apple chip 다운로드 및 설치</li>
 </ul>
 
         </div>
@@ -301,23 +333,23 @@
             "name": "Shaun289"
         },
         "headline": "React Native 시작하기",
-        "image": "http://shaun289.github.io",
+        "image": "http://shaun289.github.io/images/xcode_install.png",
         "keywords": "ReactNative, RN, Programming",
         "genre": "Programming",
         "datePublished": "2023-01-12",
         "dateCreated": "2023-01-12",
-        "dateModified": "2023-01-12",
+        "dateModified": "2023-01-14",
         "url": "http://shaun289.github.io/2023/01/12/React-Native-시작하기/",
         "description": "ReactNative를 맥북m1에 설치하며 거칠게 남기는 로그입니다.계속 업데이트하며 다듬도록 하겠습니다.
 참고 링크
 [React-Native] 1. M1 Mac에서 React-Native 환경 구축
+맥에서 Brew로 자바 설치하기
+M1 맥 개발환경 설정 - (4) 안드로이드 스튜디오 설치
 
 설치
 Homebrew와 node 는 이미 설치
-Watchman 설치
-
-",
-        "wordCount": 31
+Watchman 설",
+        "wordCount": 332
     }
 </script>
 
@@ -386,7 +418,7 @@ Watchman 설치
     <h3 class="widget-title">Catalog</h3>
     <div class="widget">
         <div id="toc" class="toc-article">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%EC%B0%B8%EA%B3%A0-%EB%A7%81%ED%81%AC"><span class="toc-number">1.</span> <span class="toc-text">참고 링크</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%EC%84%A4%EC%B9%98"><span class="toc-number">2.</span> <span class="toc-text">설치</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%EC%B0%B8%EA%B3%A0-%EB%A7%81%ED%81%AC"><span class="toc-number">1.</span> <span class="toc-text">참고 링크</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%EC%84%A4%EC%B9%98"><span class="toc-number">2.</span> <span class="toc-text">설치</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#react-natice-cli-%EC%84%A4%EC%B9%98"><span class="toc-number">2.1.</span> <span class="toc-text">react-natice-cli 설치</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xcode-%EC%84%A4%EC%B9%98"><span class="toc-number">2.2.</span> <span class="toc-text">xcode 설치</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cocoapods-%EC%84%A4%EC%B9%98"><span class="toc-number">2.2.1.</span> <span class="toc-text">cocoapods 설치</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rosetta-%EC%84%A4%EC%A0%95"><span class="toc-number">2.2.2.</span> <span class="toc-text">Rosetta 설정</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD-%EC%84%A4%EC%B9%98"><span class="toc-number">2.3.</span> <span class="toc-text">Android 개발환경 설치</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK-%EC%84%A4%EC%B9%98"><span class="toc-number">2.3.1.</span> <span class="toc-text">JDK 설치</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Andriod-Studio"><span class="toc-number">2.3.2.</span> <span class="toc-text">Andriod Studio</span></a></li></ol></li></ol></li></ol>
         </div>
     </div>
 </div>
@@ -425,7 +457,7 @@ Watchman 설치
                             <a href="/2023/01/12/React-Native-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/xcode_install.png)" alt="React Native 시작하기" class="thumbnail-image"></span>
     
     
 </a>
