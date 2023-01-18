@@ -12,15 +12,15 @@
     
     <meta name="keywords" content="C++, Functional, 함수형, copy_if" />
     
-    <meta name="description" content="함수형 프로그래밍의 핵심 개념 중 하나인 고차함수의 c++ std 구현제가 개발하는 플랫폼이 c++11 만 지원해서 c++11 에서 가능한 구현만 기술합니다. filter : std::copy_ifInput iterator 를 받아서 filter를 걸어 return true 에 해당하는 element 만 Output Iterator 로 출력함   참조 모던">
+    <meta name="description" content="함수형 프로그래밍의 핵심 개념 중 하나인 고차함수의 c++ std 구현제가 개발하는 플랫폼이 c++11 만 지원해서 c++11 에서 가능한 구현만 기술합니다. filter : std::copy_ifInput iterator 를 받아서 filter를 걸어 return true 에 해당하는 element 만 Output Iterator 로 출력함   map :">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ 함수형프로그래밍 고차함수">
 <meta property="og:url" content="http://shaun289.github.io/2023/01/16/C-%ED%95%A8%EC%88%98%ED%98%95%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/index.html">
 <meta property="og:site_name" content="Programming &amp; games">
-<meta property="og:description" content="함수형 프로그래밍의 핵심 개념 중 하나인 고차함수의 c++ std 구현제가 개발하는 플랫폼이 c++11 만 지원해서 c++11 에서 가능한 구현만 기술합니다. filter : std::copy_ifInput iterator 를 받아서 filter를 걸어 return true 에 해당하는 element 만 Output Iterator 로 출력함   참조 모던">
+<meta property="og:description" content="함수형 프로그래밍의 핵심 개념 중 하나인 고차함수의 c++ std 구현제가 개발하는 플랫폼이 c++11 만 지원해서 c++11 에서 가능한 구현만 기술합니다. filter : std::copy_ifInput iterator 를 받아서 filter를 걸어 return true 에 해당하는 element 만 Output Iterator 로 출력함   map :">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-01-16T10:53:19.000Z">
-<meta property="article:modified_time" content="2023-01-17T03:30:21.403Z">
+<meta property="article:modified_time" content="2023-01-18T10:57:22.996Z">
 <meta property="article:author" content="Shaun289">
 <meta property="article:tag" content="C++, Functional, 함수형, copy_if">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2023/01/16/C-%ED%95%A8%EC%88%98%ED%98%95%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98/" class="article-date">
-     <time datetime="2023-01-17T03:30:21.403Z" itemprop="dateModified">2023-01-17</time>
+     <time datetime="2023-01-18T10:57:22.996Z" itemprop="dateModified">2023-01-18</time>
   </a>
 </div>
 
@@ -219,9 +219,13 @@
 <h1 id="filter-std-copy-if"><a href="#filter-std-copy-if" class="headerlink" title="filter : std::copy_if"></a>filter : std::copy_if</h1><p>Input iterator 를 받아서 filter를 걸어 return true 에 해당하는 element 만 Output Iterator 로 출력함</p>
 <script src="//gist.github.com/bb6b5c0a13fa24a8d47c9d8963f621e6.js"></script>
 
+<h1 id="map-std-transform"><a href="#map-std-transform" class="headerlink" title="map : std::transform"></a>map : std::transform</h1><p>c++17 부터 추가된 기능입니다.<br>iterator 로 전달받은 element 모두에게 함수를 실행해줍니다.<br>위에 기술했듯이 c++11을 사용하는 나에겐 언감생심. 쓸수없는 기능이네요.<br>boost 를 통해 사용할 수 있습니다.<br>참고자료 : <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/34837866/boosttransform-vs-stdtransform">boost::transform vs std::transform stackoverflow.com</a></p>
+<h1 id="fold-std-accumulate"><a href="#fold-std-accumulate" class="headerlink" title="fold : std::accumulate"></a>fold : std::accumulate</h1><p>c++20 부터 추가된 기능입니다.<br>이것마저… 업무에 적용할 수 있는게 없네요 ㅡ.ㅡ</p>
 <h1 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://smpl.kr/posts/220221-learning-cpp-functional-programming/">모던 C++로 배우는 함수형 프로그래밍 읽기</a></li>
 <li><a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/algorithm/copy">cppreference.com std::copy_if</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/algorithm/transform">cppreference.com std::transform</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/algorithm/accumulate">cppreference.com std::accumulate</a></li>
 </ul>
 
         </div>
@@ -306,15 +310,14 @@
         "genre": "Programming",
         "datePublished": "2023-01-16",
         "dateCreated": "2023-01-16",
-        "dateModified": "2023-01-17",
+        "dateModified": "2023-01-18",
         "url": "http://shaun289.github.io/2023/01/16/C-함수형프로그래밍-고차함수/",
         "description": "함수형 프로그래밍의 핵심 개념 중 하나인 고차함수의 c++ std 구현제가 개발하는 플랫폼이 c++11 만 지원해서 c++11 에서 가능한 구현만 기술합니다.
 filter : std::copy_ifInput iterator 를 받아서 filter를 걸어 return true 에 해당하는 element 만 Output Iterator 로 출력함
 
 
-참조
-모던",
-        "wordCount": 56
+map :",
+        "wordCount": 112
     }
 </script>
 
@@ -383,7 +386,7 @@ filter : std::copy_ifInput iterator 를 받아서 filter를 걸어 return true �
     <h3 class="widget-title">Catalog</h3>
     <div class="widget">
         <div id="toc" class="toc-article">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#filter-std-copy-if"><span class="toc-number">1.</span> <span class="toc-text">filter : std::copy_if</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%EC%B0%B8%EC%A1%B0"><span class="toc-number">2.</span> <span class="toc-text">참조</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#filter-std-copy-if"><span class="toc-number">1.</span> <span class="toc-text">filter : std::copy_if</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#map-std-transform"><span class="toc-number">2.</span> <span class="toc-text">map : std::transform</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fold-std-accumulate"><span class="toc-number">3.</span> <span class="toc-text">fold : std::accumulate</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%EC%B0%B8%EC%A1%B0"><span class="toc-number">4.</span> <span class="toc-text">참조</span></a></li></ol>
         </div>
     </div>
 </div>
