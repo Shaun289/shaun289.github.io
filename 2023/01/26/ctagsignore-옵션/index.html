@@ -6,17 +6,23 @@
     
 
     
-    <title>Category: ETC | Programming &amp; games</title>
+    <title>ctags 에서 사용할 수 있는 ignore 옵션 | Programming &amp; games</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Programming &amp; games">
-<meta property="og:url" content="http://shaun289.github.io/categories/ETC/index.html">
+    <meta name="keywords" content="ctags, ctagsignore, vim, vi" />
+    
+    <meta name="description" content="큰 프로젝트에서 유용하게 사용하는 ctags ignore 옵션 설명입니다. alias~&#x2F;.bashrc 에 다음과 같이 alias 해놓고 사용합니다.뒤의 c++kinds, fields, extra 는 c++ 에서 유용한 옵션으로 추천받아서 그냥 사용하고 있습니다.명확하게 알려면 몇가지 테스트 해보면 알텐데 귀찮… 1alias ctags&#x3D;&amp;#x27;&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ctags 에서 사용할 수 있는 ignore 옵션">
+<meta property="og:url" content="http://shaun289.github.io/2023/01/26/ctagsignore-%EC%98%B5%EC%85%98/index.html">
 <meta property="og:site_name" content="Programming &amp; games">
+<meta property="og:description" content="큰 프로젝트에서 유용하게 사용하는 ctags ignore 옵션 설명입니다. alias~&#x2F;.bashrc 에 다음과 같이 alias 해놓고 사용합니다.뒤의 c++kinds, fields, extra 는 c++ 에서 유용한 옵션으로 추천받아서 그냥 사용하고 있습니다.명확하게 알려면 몇가지 테스트 해보면 알텐데 귀찮… 1alias ctags&#x3D;&amp;#x27;&#x2F;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-26T04:15:03.000Z">
+<meta property="article:modified_time" content="2023-01-27T23:06:46.121Z">
 <meta property="article:author" content="Shaun289">
-<meta property="article:tag" content="rust,programming,games">
+<meta property="article:tag" content="ctags, ctagsignore, vim, vi">
 <meta name="twitter:card" content="summary">
     
 
@@ -150,79 +156,178 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>Category: <em class="page-title-link">ETC</em>
+    <a class="page-title-link" href="/categories/Programming/">Programming</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-ctagsignore-옵션" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2023" class="archive-year"><i class="icon fa fa-calendar-o"></i>2023</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2023/01/12/Hexo-%EC%84%A4%EC%B9%98-%EB%B0%8F-%ED%8C%81%EB%AA%A8%EC%9D%8C/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/toc.png)" alt="Hexo 설치 및 팁모음" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://shaun289.github.io/2023/01/12/Hexo-%EC%84%A4%EC%B9%98-%EB%B0%8F-%ED%8C%81%EB%AA%A8%EC%9D%8C/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/ETC/">ETC</a>
-            </div>
-            <div class="date"><time datetime="2023-01-12T11:20:22.000Z" itemprop="datePublished">2023-01-12</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2023/01/12/Hexo-%EC%84%A4%EC%B9%98-%EB%B0%8F-%ED%8C%81%EB%AA%A8%EC%9D%8C/">Hexo 설치 및 팁모음</a>
+        ctags 에서 사용할 수 있는 ignore 옵션
         </h1>
     
 
-        <p class="article-excerpt">
-            github.io 블로그에서 사용하고 있는 Hexo를 설치하고 활용하는 팁 모음입니다.
-팁목차(Table of Contents)
-Front-matter metadata 에 toc: true 추가
-사이드바에 Catalog에 목차 표시됨
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2023/01/26/ctagsignore-%EC%98%B5%EC%85%98/" class="article-date">
+       <time datetime="2023-01-26T04:15:03.000Z" itemprop="datePublished">2023-01-26</time>
+    </a>
+  </div>
 
 
-        </p>
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2023/01/26/ctagsignore-%EC%98%B5%EC%85%98/" class="article-date">
+     <time datetime="2023-01-27T23:06:46.121Z" itemprop="dateModified">2023-01-28</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/ctags-ctagsignore-vim-vi/" rel="tag">ctags, ctagsignore, vim, vi</a>
     </div>
-</article>
-    
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <p>큰 프로젝트에서 유용하게 사용하는 ctags ignore 옵션 설명입니다.</p>
+<h1 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h1><p>~&#x2F;.bashrc 에 다음과 같이 alias 해놓고 사용합니다.<br>뒤의 c++kinds, fields, extra 는 c++ 에서 유용한 옵션으로 추천받아서 그냥 사용하고 있습니다.<br>명확하게 알려면 몇가지 테스트 해보면 알텐데 귀찮…</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ctags=&#x27;/usr/bin/ctags -R --exclude=@.ctagsignore --c++-kinds=+p --fields=+iaS --extra=+q &#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="R-–recurse"><a href="#R-–recurse" class="headerlink" title="-R –recurse"></a>-R –recurse</h2><p>딱히 설명이 필요없는…아래 디렉토리까지 모두 검색하는 옵션</p>
+<h2 id="exclude-x3D-ctagsignore"><a href="#exclude-x3D-ctagsignore" class="headerlink" title="--exclude&#x3D;@.ctagsignore"></a>--exclude&#x3D;@.ctagsignore</h2><p>.ctagsignore 파일을 읽어들여 패턴에 해당하는 파일은 무시하는 옵션<br>이 옵션이 이 포스팅의 핵심입니다.<br>git 사용자에게 익숙한 .gitignore 문법과 동일하게 사용하면 됩니다.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**/Unittest</span><br><span class="line">**/UnitTest</span><br></pre></td></tr></table></figure>
+
+<p>제 .ctagsignore에 포함된 기본 패턴입니다.</p>
+
         </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://shaun289.github.io/2023/01/26/ctagsignore-%EC%98%B5%EC%85%98/" data-id="cldf4wezt0000au7g7f1egppz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Shaun289"
+        },
+        "headline": "ctags 에서 사용할 수 있는 ignore 옵션",
+        "image": "http://shaun289.github.io",
+        "keywords": "ctags, ctagsignore, vim, vi",
+        "genre": "Programming",
+        "datePublished": "2023-01-26",
+        "dateCreated": "2023-01-26",
+        "dateModified": "2023-01-28",
+        "url": "http://shaun289.github.io/2023/01/26/ctagsignore-옵션/",
+        "description": "큰 프로젝트에서 유용하게 사용하는 ctags ignore 옵션 설명입니다.
+alias~&#x2F;.bashrc 에 다음과 같이 alias 해놓고 사용합니다.뒤의 c++kinds, fields, extra 는 c++ 에서 유용한 옵션으로 추천받아서 그냥 사용하고 있습니다.명확하게 알려면 몇가지 테스트 해보면 알텐데 귀찮…
+1alias ctags=&#x27;/",
+        "wordCount": 95
+    }
+</script>
+
+</article>
+
+    <section id="comments">
     
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
 
-    </div></section>
-
+    
+    </section>
 
 
 
@@ -245,10 +350,32 @@ Front-matter metadata 에 toc: true 추가
         </ul>
     </div>
     
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2023/01/17/MacOS-%EC%97%90-GoogleTest-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">MacOS 에 GoogleTest 설치하기</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
     <div class="widgets-container">
         
             
                 
+<div class="widget-wrap widget-list">
+    <h3 class="widget-title">Catalog</h3>
+    <div class="widget">
+        <div id="toc" class="toc-article">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#alias"><span class="toc-number">1.</span> <span class="toc-text">alias</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#R-%E2%80%93recurse"><span class="toc-number">1.1.</span> <span class="toc-text">-R –recurse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#exclude-x3D-ctagsignore"><span class="toc-number">1.2.</span> <span class="toc-text">--exclude&#x3D;@.ctagsignore</span></a></li></ol></li></ol>
+        </div>
+    </div>
+</div>
+
 
             
                 
@@ -455,11 +582,13 @@ Front-matter metadata 에 toc: true 추가
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://shaun289.github.io/2023/01/26/ctagsignore-%EC%98%B5%EC%85%98/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
