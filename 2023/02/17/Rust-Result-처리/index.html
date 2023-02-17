@@ -6,21 +6,23 @@
     
 
     
-    <title>주간 운동일지 : Restart | Programming &amp; games</title>
+    <title>Rust: Result 처리 | Programming &amp; games</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="운동,WorkOut" />
+    <meta name="keywords" content="rust, result, ok, err" />
     
-    <meta property="og:type" content="article">
-<meta property="og:title" content="주간 운동일지 : Restart">
-<meta property="og:url" content="http://shaun289.github.io/2023/01/28/%EC%A3%BC%EA%B0%84-%EC%9A%B4%EB%8F%99%EC%9D%BC%EC%A7%80-Restart/index.html">
+    <meta name="description" content="Rust 사용하면서 필수적인 Result 에 대해 정리하며, Result 처리 하는 방법에 대해 코드를 작성합니다. 주의 : 공부하는 과정에서 정리한 문서이므로 부정확할 수 있으며, 수시로 내용 업데이트합니다.  Result 열거형 참고 : Result와 함께하는 복구 가능한 에러 지난 Option 처리 에서 해본Option 열거형은 Some 과 None">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rust: Result 처리">
+<meta property="og:url" content="http://shaun289.github.io/2023/02/17/Rust-Result-%EC%B2%98%EB%A6%AC/index.html">
 <meta property="og:site_name" content="Programming &amp; games">
+<meta property="og:description" content="Rust 사용하면서 필수적인 Result 에 대해 정리하며, Result 처리 하는 방법에 대해 코드를 작성합니다. 주의 : 공부하는 과정에서 정리한 문서이므로 부정확할 수 있으며, 수시로 내용 업데이트합니다.  Result 열거형 참고 : Result와 함께하는 복구 가능한 에러 지난 Option 처리 에서 해본Option 열거형은 Some 과 None">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-01-27T23:17:27.000Z">
-<meta property="article:modified_time" content="2023-01-27T23:18:01.827Z">
+<meta property="article:published_time" content="2023-02-17T08:23:48.000Z">
+<meta property="article:modified_time" content="2023-02-17T09:02:22.943Z">
 <meta property="article:author" content="Shaun289">
-<meta property="article:tag" content="운동,WorkOut">
+<meta property="article:tag" content="rust, result, ok, err">
 <meta name="twitter:card" content="summary">
     
 
@@ -154,19 +156,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Daily-Weekly/">Daily&Weekly</a>
+    <a class="page-title-link" href="/categories/Programming/">Programming</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-주간-운동일지-Restart" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Rust-Result-처리" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        주간 운동일지 : Restart
+        Rust: Result 처리
         </h1>
     
 
@@ -177,16 +179,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2023/01/28/%EC%A3%BC%EA%B0%84-%EC%9A%B4%EB%8F%99%EC%9D%BC%EC%A7%80-Restart/" class="article-date">
-       <time datetime="2023-01-27T23:17:27.000Z" itemprop="datePublished">2023-01-28</time>
+    <a href="/2023/02/17/Rust-Result-%EC%B2%98%EB%A6%AC/" class="article-date">
+       <time datetime="2023-02-17T08:23:48.000Z" itemprop="datePublished">2023-02-17</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2023/01/28/%EC%A3%BC%EA%B0%84-%EC%9A%B4%EB%8F%99%EC%9D%BC%EC%A7%80-Restart/" class="article-date">
-     <time datetime="2023-01-27T23:18:01.827Z" itemprop="dateModified">2023-01-28</time>
+  <a href="/2023/02/17/Rust-Result-%EC%B2%98%EB%A6%AC/" class="article-date">
+     <time datetime="2023-02-17T09:02:22.943Z" itemprop="dateModified">2023-02-17</time>
   </a>
 </div>
 
@@ -196,7 +198,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%EC%9A%B4%EB%8F%99-WorkOut/" rel="tag">운동,WorkOut</a>
+        <a class="tag-link-link" href="/tags/rust-result-ok-err/" rel="tag">rust, result, ok, err</a>
     </div>
 
                 
@@ -213,14 +215,53 @@
 
             
 
-            
+            <ul>
+<li>Rust 사용하면서 필수적인 Result 에 대해 정리하며, Result 처리 하는 방법에 대해 코드를 작성합니다.</li>
+<li>주의 : 공부하는 과정에서 정리한 문서이므로 부정확할 수 있으며, 수시로 내용 업데이트합니다.</li>
+</ul>
+<h1 id="Result-열거형"><a href="#Result-열거형" class="headerlink" title="Result 열거형"></a>Result 열거형</h1><ul>
+<li>참고 : <a target="_blank" rel="noopener" href="https://rinthel.github.io/rust-lang-book-ko/ch09-02-recoverable-errors-with-result.html">Result와 함께하는 복구 가능한 에러</a></li>
+<li>지난 <a href="/2023/02/11/Rust-Option-%EC%B2%98%EB%A6%AC/">Option 처리</a> 에서 해본<br>Option 열거형은 Some 과 None으로 구성되는데,<br>Result 열거형은 Ok 와 Err 로 구성됩니다.</li>
+<li>동일하게 열거형이므로 match, unwrap&#x2F;expect, if let 모두 동일하게 동작합니다.<br>unwrap&#x2F;expect 는 역시 panic을 일으키므로 사용시 주의가 필요합니다.</li>
+<li>이 장에서 설명하려는 에러 전파 숏컷 ? 는 아래에서 설명합니다.</li>
+</ul>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">fn</span> <span class="title function_">match_result_1</span>(result: <span class="type">Result</span>&lt;<span class="type">i32</span>, <span class="type">bool</span>&gt;) <span class="punctuation">-&gt;</span> <span class="type">bool</span> &#123;</span><br><span class="line">    <span class="keyword">match</span> result &#123;</span><br><span class="line">        <span class="title function_ invoke__">Ok</span>(val) =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> val == <span class="number">1</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_ invoke__">Err</span>(b) =&gt; <span class="keyword">return</span> <span class="literal">false</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">unwrap_result_1</span>(result: <span class="type">Result</span>&lt;<span class="type">i32</span>, <span class="type">bool</span>&gt;) <span class="punctuation">-&gt;</span> <span class="type">bool</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">val</span> = result.<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">    <span class="keyword">if</span> val == <span class="number">1</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">if_let_result_1</span>(result: <span class="type">Result</span>&lt;<span class="type">i32</span>, <span class="type">bool</span>&gt;) <span class="punctuation">-&gt;</span> <span class="type">bool</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> <span class="variable">Ok</span>(<span class="number">1</span>) = result &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#[cfg(test)]</span></span><br><span class="line"><span class="keyword">mod</span> test &#123;</span><br><span class="line">    <span class="keyword">use</span> super::*;</span><br><span class="line"></span><br><span class="line">      <span class="meta">#[test]</span></span><br><span class="line">      <span class="keyword">fn</span> <span class="title function_">test_match_result_1</span>() &#123;</span><br><span class="line">          <span class="built_in">assert!</span>(<span class="title function_ invoke__">match_result_1</span>(<span class="title function_ invoke__">Ok</span>(<span class="number">1</span>)));</span><br><span class="line">          <span class="built_in">assert!</span>(!<span class="title function_ invoke__">match_result_1</span>(<span class="title function_ invoke__">Ok</span>(<span class="number">2</span>)));</span><br><span class="line">          <span class="built_in">assert!</span>(!<span class="title function_ invoke__">match_result_1</span>(<span class="title function_ invoke__">Err</span>(<span class="literal">true</span>)));</span><br><span class="line">          <span class="built_in">assert!</span>(!<span class="title function_ invoke__">match_result_1</span>(<span class="title function_ invoke__">Err</span>(<span class="literal">false</span>)));</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="meta">#[test]</span></span><br><span class="line">      <span class="keyword">fn</span> <span class="title function_">test_unwrap_result_1</span>() &#123;</span><br><span class="line">          <span class="built_in">assert!</span>(<span class="title function_ invoke__">unwrap_result_1</span>(<span class="title function_ invoke__">Ok</span>(<span class="number">1</span>)));</span><br><span class="line">          <span class="built_in">assert!</span>(!<span class="title function_ invoke__">unwrap_result_1</span>(<span class="title function_ invoke__">Ok</span>(<span class="number">2</span>)));</span><br><span class="line">          <span class="built_in">assert!</span>(!<span class="title function_ invoke__">unwrap_result_1</span>(<span class="title function_ invoke__">Err</span>(<span class="literal">true</span>)));</span><br><span class="line">          <span class="built_in">assert!</span>(!<span class="title function_ invoke__">unwrap_result_1</span>(<span class="title function_ invoke__">Err</span>(<span class="literal">false</span>)));</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="meta">#[test]</span></span><br><span class="line">      <span class="keyword">fn</span> <span class="title function_">test_if_let_result_1</span>() &#123;</span><br><span class="line">          <span class="built_in">assert!</span>(<span class="title function_ invoke__">if_let_result_1</span>(<span class="title function_ invoke__">Ok</span>(<span class="number">1</span>)));</span><br><span class="line">          <span class="built_in">assert!</span>(!<span class="title function_ invoke__">if_let_result_1</span>(<span class="title function_ invoke__">Ok</span>(<span class="number">2</span>)));</span><br><span class="line">          <span class="built_in">assert!</span>(!<span class="title function_ invoke__">if_let_result_1</span>(<span class="title function_ invoke__">Err</span>(<span class="literal">true</span>)));</span><br><span class="line">          <span class="built_in">assert!</span>(!<span class="title function_ invoke__">if_let_result_1</span>(<span class="title function_ invoke__">Err</span>(<span class="literal">false</span>)));</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="에러-전파-숏컷"><a href="#에러-전파-숏컷" class="headerlink" title="에러 전파 숏컷 ?"></a>에러 전파 숏컷 ?</h2><ul>
+<li>참고 : <a target="_blank" rel="noopener" href="https://rinthel.github.io/rust-lang-book-ko/ch09-02-recoverable-errors-with-result.html#%EC%97%90%EB%9F%AC%EB%A5%BC-%EC%A0%84%ED%8C%8C%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%9C-%EC%88%8F%EC%BB%B7-">에러를 전파하기 위한 숏컷: ?</a></li>
+<li>? 숏컷은 Result 에 대해서만 사용할 수 있습니다.</li>
+<li>편리한만큼 명확하게 알지 못하고 건너가면 낭패를 볼 수 있습니다.<br>? 숏컷을 사용할때 Result 의 Err형을 제대로 선언하지 않으면<br>컴파일 에러는 계속 발생하고 어떻게 해결해야할지 모르는 상황이 발생하죠.<br>(제가 그렇습니다.)</li>
+</ul>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="variable">f</span> = File::<span class="title function_ invoke__">open</span>(<span class="string">&quot;hello.txt&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">f</span> = <span class="keyword">match</span> f &#123;</span><br><span class="line">    <span class="title function_ invoke__">Ok</span>(file) =&gt; file,</span><br><span class="line">    <span class="title function_ invoke__">Err</span>(e) =&gt; <span class="keyword">return</span> <span class="title function_ invoke__">Err</span>(e),</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">f</span> = File::<span class="title function_ invoke__">open</span>(<span class="string">&quot;hello.txt&quot;</span>)?;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>위의 두 코드는 동일합니다. match에서 에러일 경우 Err(e) 를 리턴하고 있죠.<br>그래서 ?를 사용할때는 Result 의 Err 타입에 대해서 명확하게 알고 작성해야합니다.</li>
+</ul>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">fn</span> <span class="title function_">read_username_from_file</span>() <span class="punctuation">-&gt;</span> <span class="type">Result</span>&lt;<span class="type">String</span>, io::Error&gt; &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>위의 두 코드 모두 함수 리턴이 io::Error 로 선언해서 전파해야합니다.<br>File::open 의 Result 를 알아야겠네요.</li>
+</ul>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">open</span>&lt;P: <span class="built_in">AsRef</span>&lt;Path&gt;&gt;(path: P) <span class="punctuation">-&gt;</span> <span class="type">Result</span>&lt;File&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>참조 : <a target="_blank" rel="noopener" href="https://doc.rust-lang.org/std/fs/struct.File.html#method.open">std::io::File::open</a><br>읭? Result<File> 입니다. 이게 뭐지.. 왜 Result&lt;File, io:Error&gt; 이 아니죠?<br>링크의 <a target="_blank" rel="noopener" href="https://doc.rust-lang.org/std/io/type.Result.html">Result</a>를 클릭해보니..</li>
+</ul>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Type Definition std::io::<span class="type">Result</span></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">type</span> <span class="title class_">Result</span>&lt;T&gt; = <span class="type">Result</span>&lt;T, Error&gt;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>그냥 Result가 아니라  std::io::Result 네요..<br>Rust 를 배우는 입장에서 정말 이런거 하나때문에 헤메는거 생각하면 너무 힘드네요.<br>아무튼 하나 더 알게 되었습니다.</li>
+</ul>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://shaun289.github.io/2023/01/28/%EC%A3%BC%EA%B0%84-%EC%9A%B4%EB%8F%99%EC%9D%BC%EC%A7%80-Restart/" data-id="cldp56bpb000f6y7g3iv3ghpe" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://shaun289.github.io/2023/02/17/Rust-Result-%EC%B2%98%EB%A6%AC/" data-id="cle8a4tn100008g7gbn2q6mg4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -290,16 +331,22 @@
             "@type": "Person",
             "name": "Shaun289"
         },
-        "headline": "주간 운동일지 : Restart",
+        "headline": "Rust: Result 처리",
         "image": "http://shaun289.github.io",
-        "keywords": "운동,WorkOut",
-        "genre": "Daily&Weekly",
-        "datePublished": "2023-01-28",
-        "dateCreated": "2023-01-28",
-        "dateModified": "2023-01-28",
-        "url": "http://shaun289.github.io/2023/01/28/주간-운동일지-Restart/",
-        "description": "",
-        "wordCount": 1
+        "keywords": "rust, result, ok, err",
+        "genre": "Programming",
+        "datePublished": "2023-02-17",
+        "dateCreated": "2023-02-17",
+        "dateModified": "2023-02-17",
+        "url": "http://shaun289.github.io/2023/02/17/Rust-Result-처리/",
+        "description": "
+Rust 사용하면서 필수적인 Result 에 대해 정리하며, Result 처리 하는 방법에 대해 코드를 작성합니다.
+주의 : 공부하는 과정에서 정리한 문서이므로 부정확할 수 있으며, 수시로 내용 업데이트합니다.
+
+Result 열거형
+참고 : Result와 함께하는 복구 가능한 에러
+지난 Option 처리 에서 해본Option 열거형은 Some 과 None",
+        "wordCount": 1022
     }
 </script>
 
@@ -340,20 +387,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2023/02/04/Rust-Package-clap/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Rust Package : clap
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2023/01/26/ctagsignore-%EC%98%B5%EC%85%98/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2023/02/11/Rust-Option-%EC%B2%98%EB%A6%AC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">ctags 에서 사용할 수 있는 ignore 옵션</p>
+        <p class="article-nav-title">Rust : Option 처리</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -368,7 +405,7 @@
     <h3 class="widget-title">Catalog</h3>
     <div class="widget">
         <div id="toc" class="toc-article">
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Result-%EC%97%B4%EA%B1%B0%ED%98%95"><span class="toc-number">1.</span> <span class="toc-text">Result 열거형</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%EC%97%90%EB%9F%AC-%EC%A0%84%ED%8C%8C-%EC%88%8F%EC%BB%B7"><span class="toc-number">1.1.</span> <span class="toc-text">에러 전파 숏컷 ?</span></a></li></ol></li></ol>
         </div>
     </div>
 </div>
@@ -579,7 +616,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://shaun289.github.io/2023/01/28/%EC%A3%BC%EA%B0%84-%EC%9A%B4%EB%8F%99%EC%9D%BC%EC%A7%80-Restart/';
+    var disqus_url = 'http://shaun289.github.io/2023/02/17/Rust-Result-%EC%B2%98%EB%A6%AC/';
     
     (function() {
     var dsq = document.createElement('script');
