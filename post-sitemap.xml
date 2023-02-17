@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>http://shaun289.github.io/2023/02/11/Rust-Option-%EC%B2%98%EB%A6%AC/</loc>
+        <lastmod>2023-02-17T07:27:04.869Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://shaun289.github.io/2023/02/04/Rust-Package-clap/</loc>
+        <lastmod>2023-02-04T03:09:57.858Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://shaun289.github.io/2023/01/28/%EC%A3%BC%EA%B0%84-%EC%9A%B4%EB%8F%99%EC%9D%BC%EC%A7%80-Restart/</loc>
         <lastmod>2023-01-27T23:18:01.827Z</lastmod>
         <changefreq>weekly</changefreq>
