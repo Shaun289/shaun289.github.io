@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>http://shaun289.github.io/tags/rust-package-clap/</loc>
+        <lastmod>2023-02-18T03:03:27.441Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://shaun289.github.io/tags/rust-result-ok-err/</loc>
         <lastmod>2023-02-17T09:02:22.943Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -12,13 +19,6 @@
     <url>
         <loc>http://shaun289.github.io/tags/rust-option-some-none/</loc>
         <lastmod>2023-02-17T07:27:04.869Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://shaun289.github.io/tags/rust-package-clap/</loc>
-        <lastmod>2023-02-04T03:09:57.858Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
